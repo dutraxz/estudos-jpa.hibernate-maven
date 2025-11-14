@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<!-- (modelVersion) A versão do "molde" do pom.xml. É sempre 4.0.0.-->
+
+<groupId>nomedaempresa.com</groupId> <!-- groupId>: O "ID da Empresa" - Identifica quem é o "dono" do projeto.-->
+<artifactId>estudos-jpa.hibernate-maven</artifactId>  <!--artifactId - Nome do Projeto-->
+<!--  <version>1.0-SNAPSHOT</version> <version>: A versão do seu software (ex: 1.0-SNAPSHOT, que significa "em desenvolvimento").-->
+<!--  <packaging>jar</packaging> <packaging>: O "tipo de pacote" final que o Maven vai criar (ex: jar, que é o padrão).-->
+
+<!--  <name>estudos-jpa.hibernate-maven</name> <name>: Um nome "amigável" para o projeto (usado em documentação).-->
+<!--  <url>http://maven.apache.org</url> <url>: O site/URL do projeto (apenas informativo).-->
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+          <maven.compiler.source>21</maven.compiler.source>
+          <maven.compiler.target>21</maven.compiler.target>
+        <!--cofiguração da versao do java(21) para rodar o maven-->
+
+  </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>      <artifactId>junit</artifactId>  <version>3.8.1</version>      <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
+<!--(project)A tag raiz de todo o arquivo. Tudo fica dentro dela.-->
