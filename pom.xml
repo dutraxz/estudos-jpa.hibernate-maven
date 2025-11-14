@@ -1,31 +1,51 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
 <!-- (modelVersion) A versão do "molde" do pom.xml. É sempre 4.0.0.-->
 
-<groupId>nomedaempresa.com</groupId> <!-- groupId>: O "ID da Empresa" - Identifica quem é o "dono" do projeto.-->
-<artifactId>estudos-jpa.hibernate-maven</artifactId>  <!--artifactId - Nome do Projeto-->
-<!--  <version>1.0-SNAPSHOT</version> <version>: A versão do seu software (ex: 1.0-SNAPSHOT, que significa "em desenvolvimento").-->
-<!--  <packaging>jar</packaging> <packaging>: O "tipo de pacote" final que o Maven vai criar (ex: jar, que é o padrão).-->
+    <groupId>nomedaempresa.com</groupId> <!--(groupId): O "ID da Empresa" - Identifica quem é o "dono" do projeto-->
 
-<!--  <name>estudos-jpa.hibernate-maven</name> <name>: Um nome "amigável" para o projeto (usado em documentação).-->
-<!--  <url>http://maven.apache.org</url> <url>: O site/URL do projeto (apenas informativo).-->
+    <artifactId>estudos-jpa.hibernate-maven</artifactId>  <!--(artifactId) - Nome do Projeto-->
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <version>1.0-SNAPSHOT</version> <!--(version): A versão do software (ex: 1.0-SNAPSHOT, que significa "em desenvolvimento")-->
 
-          <maven.compiler.source>21</maven.compiler.source>
-          <maven.compiler.target>21</maven.compiler.target>
-        <!--cofiguração da versao do java(21) para rodar o maven-->
+    <packaging>jar</packaging> <!--(packaging): O "tipo de pacote" final que o Maven vai criar (ex: jar, que é o padrão dele)-->
 
-  </properties>
+    <name>estudos-jpa.hibernate-maven</name> <!--(name): Um nome "amigável" para o projeto (usado em documentação)-->
+
+    <url>http://maven.apache.org</url> <!--(url): O site/URL do maven (apenas informativo)-->
+
+    <properties>
+<!--(properties): Define "variáveis" globais para usar no resto do arquivo-->
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- (project.build.sourceEncoding): Define a codificação de caracteres (UTF-8) para evitar problemas com acentos-->
+
+        <maven.compiler.source>21</maven.compiler.source> <!-- (maven.compiler.source): Diz ao Maven qual versão do Java usou para escrever o código (ex: 21)-->
+
+        <maven.compiler.target>21</maven.compiler.target> <!-- (maven.compiler.target): Diz ao Maven para qual versão do Java ele deve compilar o código (ex: 21)-->
+
+<!--cofiguração da versao do java(21) para rodar o maven-->
+    </properties>
 
     <dependencies>
+
         <dependency>
-            <groupId>junit</groupId>      <artifactId>junit</artifactId>  <version>3.8.1</version>      <scope>test</scope>
+<!--(dependency): Define um "item" da sua lista de compras (uma biblioteca, como o JUnit ou o Hibernate).-->
+
+            <groupId>junit</groupId>  <!--identifica quem criou a biblioteca-->
+
+            <artifactId>junit</artifactId> <!--identifica o nome especifico da biblioteca-->
+
+            <version>3.8.1</version> <!-- identifica a versão da ferramenta-->
+
+            <scope>test</scope> <!--(scope): Define "quando" usar essa biblioteca. O (test) significa que ela só é usada na fase de testes, não indo para o .jar final-->
+
         </dependency>
 
     </dependencies>
+<!--(dependencies): A tag que agrupa toda a sua "lista de compras" de bibliotecas-->
 
 </project>
-<!--(project)A tag raiz de todo o arquivo. Tudo fica dentro dela.-->
+<!--(project) Tag raiz de todos arquivos, tudo fica dentro dela-->
