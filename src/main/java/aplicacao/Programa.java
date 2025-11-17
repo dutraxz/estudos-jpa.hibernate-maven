@@ -1,17 +1,25 @@
 package aplicacao;
 
 import dominio.Pessoa;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public class Programa {
 
      public static void main(String[]args) {
+         EntityManagerFactory emf = Persistence.createEntityManagerFactory("aulajpa");
+         //Aqui instaciamos a config do EntytyManagerFactory com as config do banco no (persistence.xml)
 
-         Pessoa p1 = new Pessoa(1,"Victor Dutra", "victordutra@gmail.com");
-         Pessoa p2 = new Pessoa(2,"Larissa Dutra", "larissadutra@gmail.com");
-         Pessoa p3 = new Pessoa(3,"Roberto Dutra", "robertodutra@gmail.com");
+         EntityManager em = emf.createEntityManager();
+         //Aqui instanciamos o EntytyManager para termos a conexão com o banco e a persistencia implementada
 
-         System.out.println(p1);
-         System.out.println(p2);
-         System.out.println(p3);
+         Pessoa p = em.find(Pessoa.class, 3);
+
+         System.out.println("Os dados foram inseridos com sucesso ao banco!");
+         System.out.println(p);
+
+         em.close();
+         emf.close();
      }
 }
