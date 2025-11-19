@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 <!-- (modelVersion) A versão do "molde" do pom.xml. É sempre 4.0.0.-->
 
-    <groupId>nomedaempresa.com</groupId> <!--(groupId): O "ID da Empresa" - Identifica quem é o "dono" do projeto-->
+    <groupId>br.com.estudos.jpaehibernate</groupId> <!--(groupId): O "ID da Empresa" - Identifica quem é o "dono" do projeto-->
     <artifactId>estudos-jpa.hibernate-maven</artifactId>  <!--(artifactId) - Nome do Projeto-->
     <version>1.0-SNAPSHOT</version> <!--(version): A versão do software (ex: 1.0-SNAPSHOT, que significa "em desenvolvimento")-->
 
