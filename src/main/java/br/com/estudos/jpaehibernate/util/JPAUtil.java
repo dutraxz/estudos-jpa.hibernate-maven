@@ -31,7 +31,7 @@ public class JPAUtil {
         return factory.createEntityManager(); //Retorna o  EntityManager(trabalhador)
     }
 
-    //Boas praticas de fechamento de coneão com o EntityManagerFactory no fim do programa
+    //Boas praticas de fechamento de conexão com o EntityManagerFactory no fim do programa
     public static void closeEntityManagerFactory() {
         if (factory != null && factory.isOpen()) {
             factory.close();
