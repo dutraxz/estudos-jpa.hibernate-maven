@@ -4,6 +4,7 @@ import br.com.estudos.jpaehibernate.model.Objeto;
 import br.com.estudos.jpaehibernate.util.JPAUtil;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
@@ -39,6 +40,21 @@ public class ObjetoDAO {
         }
     }
 
+    public Objeto atualizar(Objeto objeto) {
+        EntityManager em = JPAUtil.getEntityManager();
+        try{
+            em.getTransaction().begin();
+            Objeto merged = em.merge(objeto);
+            em.getTransaction().commit();
+            return merged;
+        }catch (Exception e){
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            em.close();
+        }
+    }
+
     public void remover(Objeto objeto) {
         EntityManager em = JPAUtil.getEntityManager();
 
@@ -55,7 +71,25 @@ public class ObjetoDAO {
         }
     }
 
-    public List<Objeto> listar() {
+    public List<Objeto> listarTodos() {
+        EntityManager em = JPAUtil.getEntityManager();
+
+        try {
+            TypedQuery<Objeto> q = em.createQuery("SELECT o FROM Objeto o", Objeto.class);
+            return q.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public Objeto buscarPorId(Long id) {
+        EntityManager em = JPAUtil.getEntityManager();
+        try {
+            return em.find(Objeto.class, id);
+        } finally {
+            em.close();
+        }
     }
 }
+
 
