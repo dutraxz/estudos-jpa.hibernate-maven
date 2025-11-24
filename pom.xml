@@ -39,6 +39,12 @@
             <version>8.4.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.3</version> <scope>test</scope>
+        </dependency>
+
     </dependencies>
 <!--(dependencies): A tag que agrupa toda a sua "lista de compras" de bibliotecas-->
 </project>
